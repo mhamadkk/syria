@@ -27,6 +27,15 @@
             .product-card {
                 width: 100%;
             }
+            
+            .logo {
+                flex-direction: column;
+            }
+            
+            .logo-icon {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
         }
         
         .container {
@@ -51,22 +60,23 @@
         }
         
         .logo-icon {
-            width: 60px;
-            height: 60px;
-            background-color: #fff;
-            border-radius: 50%;
+            width: 80px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: 15px;
-            border: 2px solid rgba(0,0,0,0.5);
-            overflow: hidden; /* إضافة لضمان احتواء الصورة داخل الدائرة */
+            border: 1px solid rgba(0,0,0,0.3);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         .logo-icon img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* للحفاظ على نسب الصورة */
+            display: block;
+            object-fit: cover;
         }
         
         .logo-text {
@@ -431,6 +441,19 @@
             text-align: center;
             margin-top: 20px;
         }
+        
+        /* رسالة تحذير */
+        .flag-warning {
+            background-color: #ffebee;
+            border: 1px solid #ce1126;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+            color: #ce1126;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -439,9 +462,9 @@
         <div class="container">
             <div class="logo">
                 <div class="logo-icon">
-                  <!-- تم استبدال رمز الإيموجي بصورة علم سوريا -->
+                  <!-- علم سوريا الجديد -->
                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Flag_of_Syria.svg/800px-Flag_of_Syria.svg.png" 
-                       alt="علم سوريا" 
+                       alt="علم سوريا الجديد" 
                        title="العلم السوري - رمز السيادة والوحدة الوطنية">
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
@@ -462,6 +485,13 @@
             </ul>
         </div>
     </nav>
+    
+    <!-- رسالة توضيحية -->
+    <div class="container">
+        <div class="flag-warning">
+            تم تحديث علم سوريا بنجاح إلى النسخة الجديدة
+        </div>
+    </div>
     
     <!-- القسم الرئيسي -->
     <section id="home" class="hero">
@@ -704,6 +734,17 @@
             e.preventDefault();
             alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
             document.querySelector('.contact-form').reset();
+        });
+        
+        // تأكيد ظهور الصورة
+        window.addEventListener('load', function() {
+            const flagImg = document.querySelector('.logo-icon img');
+            if (flagImg.complete && flagImg.naturalHeight !== 0) {
+                console.log('صورة العلم ظهرت بنجاح');
+            } else {
+                console.log('هناك مشكلة في تحميل صورة العلم');
+                flagImg.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Flag_of_Syria.svg/800px-Flag_of_Syria.svg.png';
+            }
         });
     </script>
 </body>
