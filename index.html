@@ -105,12 +105,12 @@
             width: 100%;
         }
         
-        /* الهيدر والشعار */
+        /* الهيدر والشعار - تم تحديث الألوان لتعكس علم الثورة السورية */
         header {
-            background: linear-gradient(to right, #ce1126, #000000, #ffffff, #007a3d);
+            background: linear-gradient(to right, #137536, #ffffff, #000000);
             padding: 15px 0;
             text-align: center;
-            border-bottom: 3px solid #007a3d;
+            border-bottom: 3px solid #ce1126;
         }
         
         .logo {
@@ -122,9 +122,8 @@
         
         .logo-icon {
             width: 60px;
-            height: 60px;
-            background-color: #fff;
-            border-radius: 50%;
+            height: 40px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,6 +132,7 @@
             overflow: hidden;
             position: relative;
             flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         .logo-icon img {
@@ -142,21 +142,22 @@
         }
         
         .logo-text {
-            color: white;
+            color: #000;
             font-size: 24px;
             font-weight: bold;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.5);
         }
         
         .slogan {
-            color: white;
+            color: #000;
             font-size: 18px;
             margin-top: 10px;
+            font-weight: bold;
         }
         
-        /* القائمة */
+        /* القائمة - تم تحديث الألوان */
         nav {
-            background-color: #000;
+            background-color: #137536;
             padding: 10px 0;
             position: sticky;
             top: 0;
@@ -185,7 +186,7 @@
         }
         
         .nav-links a:hover {
-            background-color: #007a3d;
+            background-color: #ce1126;
         }
         
         /* القسم الرئيسي */
@@ -229,11 +230,11 @@
             margin-bottom: 20px;
         }
         
-        /* إحصائيات */
+        /* إحصائيات - تم تحديث الألوان */
         .stats {
             display: flex;
             justify-content: space-around;
-            background-color: #007a3d;
+            background-color: #137536;
             color: white;
             padding: 25px 15px;
             text-align: center;
@@ -274,7 +275,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background-color: #007a3d;
+            background-color: #137536;
         }
         
         .products {
@@ -335,7 +336,7 @@
         
         .country-tag {
             background-color: #f0f7ff;
-            color: #007a3d;
+            color: #137536;
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -350,7 +351,7 @@
         }
         
         .quality-badge {
-            background-color: #007a3d;
+            background-color: #137536;
             color: white;
             padding: 6px 12px;
             border-radius: 4px;
@@ -403,10 +404,11 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             flex: 1;
             min-width: 250px;
+            border-top: 3px solid #ce1126;
         }
         
         .exporter-card h3 {
-            color: #007a3d;
+            color: #137536;
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 2px solid #eee;
@@ -434,6 +436,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 40px;
+            border-top: 3px solid #137536;
         }
         
         .contact-form {
@@ -509,7 +512,7 @@
         }
         
         .footer-section h3 {
-            color: #007a3d;
+            color: #ce1126;
             margin-bottom: 15px;
             font-size: 20px;
         }
@@ -532,7 +535,7 @@
         }
         
         .social-links a:hover {
-            color: #007a3d;
+            color: #137536;
         }
         
         .copyright {
@@ -568,7 +571,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: #000;
+                background-color: #137536;
                 padding: 15px 0;
                 z-index: 1000;
             }
@@ -584,14 +587,14 @@
     </style>
 </head>
 <body>
-    <!-- الهيدر -->
+    <!-- الهيدر مع العلم المعدل -->
     <header>
         <div class="container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDAgMzYwIj48cmVjdCB3aWR0aD0iNTQwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iIzEzNzUzNiIvPjxyZWN0IHk9IjEyMCIgd2lkdGg9IjU0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmZmZmZmYiLz48cmVjdCB5PSIyNDAiIHdpZHRoPSI1NDAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0iTTI3MCwxODAgQTIwLDIwIDAgMSwxIDIzMCwxODAgQTIwLDIwIDAgMSAxIDI3MCwxODAgWiIgZmlsbD0iI2NlMTEyNiIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjE4MCIgcj0iMTUiIGZpbGw9IiNjZTExMjYiLz48Y2lyY2xlIGN4PSIyNjAiIGN5PSIxODAiIHI9IjE1IiBmaWxsPSIjY2UxMTI2Ii8+PC9zdmc+" 
-                         alt="علم سوريا" 
-                         title="العلم السوري">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTIwIj4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMTM3NTM2Ii8+CiAgPHJlY3QgeT0iNDAiIHdpZHRoPSIxODAiIGhlaWdodD0iNDAiIGZpbGw9IiNGRkZGRkYiLz4KICA8cmVjdCB5PSI4MCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIvPgogIDxwYXRoIGQ9Ik04MCw2MCBDODQsNjAgODgsNTggOTIsNTYgQzk2LDU0IDEwMCw1MiAxMDQsNTAgQzEwOCw0OCAxMTIsNDYgMTE2LDQ0IEMxMjAsNDIgMTI0LDQwIDEyOCwzOCBDMTMyLDM2IDEzNiwzNCAxNDAsMzIgQzE0NCwzMCAxNDgsMjggMTUyLDI2IEMxNTYsMjQgMTYwLDIyIDE2NCwyMCBDMTY4LDE4IDE3MiwxNiAxNzYsMTQgQzE4MCwxMiAxODAsMTAgMTc4LDggQzE3Niw2IDE3NCw0IDE3MiwyIEMxNzAsMCAxNjgsLTIgMTY2LC00IEMxNjQsLTYgMTYyLC04IDE2MCwtMTAgQzE1OCwtMTIgMTU2LC0xNCAxNTQsLTE2IEMxNTIsLTE4IDE1MCwtMjAgMTQ4LC0yMiBDMTQ2LC0yNCAxNDQsLTI2IDE0MiwtMjggQzE0MCwtMzAgMTM4LC0zMiAxMzYsLTM0IEMxMzQsLTM2IDEzMiwtMzggMTMwLC00MCBDMTI4LC00MiAxMjYsLTQ0IDEyNCwtNDYgQzEyMiwtNDggMTIwLC01MCAxMTgsLTUyIEMxMTYsLTU0IDExNCwtNTYgMTEyLC01OCBDMTEwLC02MCAxMDgsLTYyIDEwNiwtNjQgQzEwNCwtNjYgMTAyLC02OCAxMDAsLTcwIEM5OCwtNzIgOTYsLTc0IDk0LC03NiBDOTIsLTc4IDkwLC04MCA4OCwtODIgQzg2LC04NCA4NCwtODYgODIsLTg4IEM4MCwtOTAgNzgsLTkyIDc2LC05NCBDNzQsLTk2IDcyLC05OCA3MCwtMTAwIEM2OCwtMTAyIDY2LC0xMDQgNjQsLTEwNiBDNjIsLTEwOCA2MCwtMTEwIDU4LC0xMTIgQzU2LC0xMTQgNTQsLTExNiA1MiwtMTE4IEM1MCwtMTIwIDQ4LC0xMjIgNDYsLTEyNCBDNDQsLTEyNiA0MiwtMTI4IDQwLC0xMzAgQzM4LC0xMzIgMzYsLTEzNCAzNCwtMTM2IEMzMiwtMTM4IDMwLC0xNDAgMjgsLTE0MiBDMjYsLTE0NCAyNCwtMTQ2IDIyLC0xNDggQzIwLC0xNTAgMTgsLTE1MiAxNiwtMTU0IEMxNCwtMTU2IDEyLC0xNTggMTAsLTE2MCBDOCwtMTYyIDYsLTE2NCA0LC0xNjYgQzIsLTE2OCAwLC0xNzAgLTIsLTE3MiBDLTQsLTE3NCAtNiwtMTc2IC04LC0xNzggQy0xMCwtMTgwIC0xMiwtMTgyIC0xNCwtMTg0IEMtMTYsLTE4NiAtMTgsLTE4OCAtMjAsLTE5MCBDLTIyLC0xOTIgLTI0LC0xOTQgLTI2LC0xOTYgQy0yOCwtMTk4IC0zMCwtMjAwIC0zMiwtMjAyIEMtMzQsLTIwNCAtMzYsLTIwNiAtMzgsLTIwOCBDLTQwLC0yMTAgLTQyLC0yMTIgLTQ0LC0yMTQgQy00NiwtMjE2IC00OCwtMjE4IC01MCwtMjIwIEMtNTIsLTIyMiAtNTQsLTIyNCAtNTYsLTIyNiBDLTU4LC0yMjggLTYwLC0yMzAgLTYyLC0yMzIgQy02NCwtMjM0IC02NiwtMjM2IC02OCwtMjM4IEMtNzAsLTI0MCAtNzIsLTI0MiAtNzQsLTI0NCBDLTc2LC0yNDYgLTc4LC0yNDggLTgwLC0yNTAgQy04MiwtMjUyIC04NCwtMjU0IC04NiwtMjU2IEMtODgsLTI1OCAtOTAsLTI2MCAtOTIsLTI2MiBDLTk0LC0yNjQgLTk2LC0yNjYgLTk4LC0yNjggQy0xMDAsLTI3MCAtMTAyLC0yNzIgLTEwNCwtMjc0IEMtMTA2LC0yNzYgLTEwOCwtMjc4IC0xMTAsLTI4MCBDLTExMiwtMjgyIC0xMTQsLTI4NCAtMTE2LC0yODYgQy0xMTgsLTI4OCAtMTIwLC0yOTAgLTEyMiwtMjkyIEMtMTI0LC0yOTQgLTEyNiwtMjk2IC0xMjgsLTI5OCBDLTEzMCwtMzAwIC0xMzIsLTMwMiAtMTM0LC0zMDQgQy0xMzYsLTMwNiAtMTM4LC0zMDggLTE0MCwtMzEwIEMtMTQyLC0zMTIgLTE0NCwtMzE0IC0xNDYsLTMxNiBDLTE0OCwtMzE4IC0xNTAsLTMyMCAtMTUyLC0zMjIgQy0xNTQsLTMyNCAtMTU2LC0zMjYgLTE1OCwtMzI4IEMtMTYwLC0zMzAgLTE2MiwtMzMyIC0xNjQsLTMzNCBDLTE2NiwtMzM2IC0xNjgsLTMzOCAtMTcwLC0zNDAgQy0xNzIsLTM0MiAtMTc0LC0zNDQgLTE3NiwtMzQ2IEMtMTc4LC0zNDggLTE4MCwtMzUwIC0xODIsLTM1MiBDLTE4NCwtMzU0IC0xODYsLTM1NiAtMTg4LC0zNTggQy0xOTAsLTM2MCAtMTkyLC0zNjIgLTE5NCwtMzY0IEMtMTk2LC0zNjYgLTE5OCwtMzY4IC0yMDAsLTM3MCBDLTIwMiwtMzcyIC0yMDQsLTM3NCAtMjA2LC0zNzYgQy0yMDgsLTM3OCAtMjEwLC0zODAgLTIxMiwtMzgyIEMtMjE0LC0zODQgLTIxNiwtMzg2IC0yMTgsLTM4OCBDLTIyMCwtMzkwIC0yMjIsLTM5MiAtMjI0LC0zOTQgQy0yMjYsLTM5NiAtMjI4LC0zOTggLTIzMCwtNDAwIEMtMjMyLC00MDIgLTIzNCwtNDA0IC0yMzYsLTQwNiBDLTIzOCwtNDA4IC0yNDAsLTQxMCAtMjQyLC00MTIgQy0yNDQsLTQxNCAtMjQ2LC00MTYgLTI0OCwtNDE4IEMtMjUwLC00MjAgLTI1MiwtNDIyIC0yNTQsLTQyNCBDLTI1NiwtNDI2IC0yNTgsLTQyOCAtMjYwLC00MzAgQy0yNjIsLTQzMiAtMjY0LC00MzQgLTI2NiwtNDM2IEMtMjY4LC00MzggLTI3MCwtNDQwIC0yNzIsLTQ0MiBDLTI3NCwtNDQ0IC0yNzYsLTQ0NiAtMjc4LC00NDggQy0yODAsLTQ1MCAtMjgyLC00NTIgLTI4NCwtNDU0IEMtMjg2LC00NTYgLTI4OCwtNDU4IC0yOTAsLTQ2MCBDLTI5MiwtNDYyIC0yOTQsLTQ2NCAtMjk2LC00NjYgQy0yOTgsLTQ2OCAtMzAwLC00NzAgLTMwMiwtNDcyIEMtMzA0LC00NzQgLTMwNiwtNDc2IC0zMDgsLTQ3OCBDLTMxMCwtNDgwIC0zMTIsLTQ4MiAtMzE0LC00ODQgQy0zMTYsLTQ4NiAtMzE4LC00ODggLTMyMCwtNDkwIEMtMzIyLC00OTIgLTMyNCwtNDk0IC0zMjYsLTQ5NiBDLTMyOCwtNDk4IC0zMzAsLTUwMCAtMzMyLC01MDIgQy0zMzQsLTUwNCAtMzM2LC01MDYgLTMzOCwtNTA4IEMtMzQwLC01MTAgLTM0MiwtNTEyIC0zNDQsLTUxNCBDLTM0NiwtNTE2IC0zNDgsLTUxOCAtMzUwLC01MjAgQy0zNTIsLTUyMiAtMzU0LC01MjQgLTM1NiwtNTI2IEMtMzU4LC01MjggLTM2MCwtNTMwIC0zNjIsLTUzMiBDLTM2NCwtNTM0IC0zNjYsLTUzNiAtMzY4LC01MzggQy0zNzAsLTU0MCAtMzcyLC01NDIgLTM3NCwtNTQ0IEMtMzc2LC01NDYgLTM3OCwtNTQ4IC0zODAsLTU1MCBDLTM4MiwtNTUyIC0zODQsLTU1NCAtMzg2LC01NTYgQy0zODgsLTU1OCAtMzkwLC01NjAgLTM5MiwtNTYyIEMtMzk0LC01NjQgLTM5NiwtNTY2IC0zOTgsLTU2OCBDLTQwMCwtNTcwIC00MDIsLTU3MiAtNDA0LC01NzQgQy00MDYsLTU3NiAtNDA4LC01NzggLTQxMCwtNTgwIEMtNDEyLC01ODIgLTQxNCwtNTg0IC00MTYsLTU4NiBDLTQxOCwtNTg4IC00MjAsLTU5MCAtNDIyLC01OTIgQy00MjQsLTU5NCAtNDI2LC01OTYgLTQyOCwtNTk4IEMtNDMwLC02MDAgLTQzMiwtNjAyIC00MzQsLTYwNCBDLTQzNiwtNjA2IC00MzgsLTYwOCAtNDQwLC02MTAgQy00NDIsLTYxMiAtNDQ0LC02MTQgLTQ0NiwtNjE2IEMtNDQ4LC02MTggLTQ1MCwtNjIwIC00NTIsLTYyMiBDLTQ1NCwtNjI0IC00NTYsLTYyNiAtNDU4LC02MjggQy00NjAsLTYzMCAtNDYyLC02MzIgLTQ2NCwtNjM0IEMtNDY2LC02MzYgLTQ2OCwtNjM4IC00NzAsLTY0MCBDLTQ3MiwtNjQyIC00NzQsLTY0NCA0NzYsNjQ2IiBmaWxsPSIjY2UxMTI2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MCA2MCkiLz4KPC9zdmc+" 
+                         alt="علم الثورة السورية" 
+                         title="علم الثورة السورية">
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
             </div>
@@ -672,7 +675,7 @@
                     <div class="export-countries">
                         <div class="country-tag">فرنسا</div>
                         <div class="country-tag">إيطاليا</div>
-                        <极简 class="country-tag">اليابان</div>
+                        <div class="country-tag">اليابان</div>
                         <div class="country-tag">الولايات المتحدة</div>
                     </div>
                     <div class="quality-badge">✅ شهادة جودة: التراث العالمي لليونسكو</div>
@@ -853,9 +856,9 @@
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                nav.style.backgroundColor = 'rgba(19, 117, 54, 0.9)';
             } else {
-                nav.style.backgroundColor = '#000';
+                nav.style.backgroundColor = '#137536';
             }
         });
         
