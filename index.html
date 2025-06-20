@@ -46,10 +46,10 @@
         
         /* الهيدر والشعار */
         header {
-            background: linear-gradient(to right, #ce1126, #000000, #ffffff, #007a3d);
+            background: linear-gradient(to right, #137536, #000000, #ffffff, #000000);
             padding: 20px 0;
             text-align: center;
-            border-bottom: 3px solid #007a3d;
+            border-bottom: 3px solid #137536;
         }
         
         .logo {
@@ -70,14 +70,20 @@
             border-radius: 4px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            background-color: white; /* خلفية بيضاء للعلم */
+            background: linear-gradient(to right, #137536 33.3%, #ffffff 33.3%, #ffffff 66.6%, #000000 66.6%);
+            position: relative;
         }
         
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
+        /* النجوم الحمراء في وسط العلم */
+        .logo-icon::before {
+            content: "★ ★ ★";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ce1126;
+            font-size: 14px;
+            letter-spacing: 4px;
         }
         
         .logo-text {
@@ -122,7 +128,7 @@
         }
         
         .nav-links a:hover {
-            background-color: #007a3d;
+            background-color: #137536;
         }
         
         /* القسم الرئيسي */
@@ -170,7 +176,7 @@
         .stats {
             display: flex;
             justify-content: space-around;
-            background-color: #007a3d;
+            background-color: #137536;
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -196,7 +202,7 @@
         .section-title {
             text-align: center;
             margin: 40px 0 30px;
-            color: #ce1126;
+            color: #137536;
             font-size: 32px;
             position: relative;
             padding-bottom: 15px;
@@ -210,7 +216,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background-color: #007a3d;
+            background-color: #137536;
         }
         
         .products {
@@ -255,7 +261,7 @@
         }
         
         .product-content h3 {
-            color: #ce1126;
+            color: #137536;
             margin-bottom: 10px;
         }
         
@@ -267,7 +273,7 @@
         
         .country-tag {
             background-color: #f0f7ff;
-            color: #007a3d;
+            color: #137536;
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -282,7 +288,7 @@
         }
         
         .quality-badge {
-            background-color: #007a3d;
+            background-color: #137536;
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -310,7 +316,7 @@
         }
         
         .story h3 {
-            color: #ce1126;
+            color: #137536;
             margin-bottom: 10px;
         }
         
@@ -336,7 +342,7 @@
         }
         
         .exporter-card h3 {
-            color: #007a3d;
+            color: #137536;
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 2px solid #eee;
@@ -431,7 +437,7 @@
         }
         
         .footer-section h3 {
-            color: #007a3d;
+            color: #137536;
             margin-bottom: 15px;
             font-size: 20px;
         }
@@ -445,14 +451,14 @@
         
         /* رسالة تحذير */
         .flag-warning {
-            background-color: #ffebee;
-            border: 1px solid #ce1126;
+            background-color: #e8f5e9;
+            border: 1px solid #137536;
             border-radius: 4px;
             padding: 10px;
             margin: 20px auto;
             max-width: 600px;
             text-align: center;
-            color: #ce1126;
+            color: #137536;
             font-weight: bold;
         }
     </style>
@@ -462,11 +468,8 @@
     <header>
         <div class="container">
             <div class="logo">
-                <div class="logo-icon">
-                  <!-- علم سوريا الجديد - مخزن محليًا -->
-                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMTAgMTQwIj48cmVjdCB3aWR0aD0iMjEwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2NlMTEyNiIvPjxyZWN0IHg9IjcwIiB3aWR0aD0iNzAiIGhlaWdodD0iMTQwIiBmaWxsPSIjZmZmZmZmIi8+PHJlY3QgeD0iMTQwIiB3aWR0aD0iNzAiIGhlaWdodD0iMTQwIiBmaWxsPSIjMDA3YTM5Ii8+PHBhdGggZD0iTTEwNSw3MCBBMTUsMTUgMCAxIDEgNzUsNzAgQTE1LDE1IDAgMSAxIDEwNSw3MCBaIiBmaWxsPSIiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iOTAiIGN5PSI3MCIgcj0iMTAiIGZpbGw9IiMwMDc0YTIiLz48L3N2Zz4=" 
-                       alt="علم سوريا الجديد" 
-                       title="العلم السوري - رمز السيادة والوحدة الوطنية">
+                <div class="logo-icon" title="علم سوريا الجديد - أخضر، أبيض، أسود مع نجوم حمراء">
+                  <!-- العلم تم إنشاؤه باستخدام CSS -->
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
             </div>
@@ -735,18 +738,6 @@
             e.preventDefault();
             alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
             document.querySelector('.contact-form').reset();
-        });
-        
-        // تأكيد ظهور الصورة
-        window.addEventListener('load', function() {
-            const flagImg = document.querySelector('.logo-icon img');
-            if (flagImg.complete && flagImg.naturalHeight !== 0) {
-                console.log('صورة العلم ظهرت بنجاح');
-            } else {
-                console.log('هناك مشكلة في تحميل صورة العلم');
-                // إعادة تعيين الصورة
-                flagImg.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMTAgMTQwIj48cmVjdCB3aWR0aD0iMjEwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2NlMTEyNiIvPjxyZWN0IHg9IjcwIiB3aWR0aD0iNzAiIGhlaWdodD0iMTQwIiBmaWxsPSIjZmZmZmZmIi8+PHJlY3QgeD0iMTQwIiB3aWR0aD0iNzAiIGhlaWdodD0iMTQwIiBmaWxsPSIjMDA3YTM5Ii8+PHBhdGggZD0iTTEwNSw3MCBBMTUsMTUgMCAxIDEgNzUsNzAgQTE1LDE1IDAgMSAxIDEwNSw3MCBaIiBmaWxsPSIiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iOTAiIGN5PSI3MCIgcj0iMTAiIGZpbGw9IiMwMDc0YTIiLz48L3N2Zz4=';
-            }
         });
     </script>
 </body>
