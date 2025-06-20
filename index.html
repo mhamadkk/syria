@@ -135,10 +135,40 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
-        .logo-icon img {
+        /* العلم الجديد - علم الثورة السورية */
+        .syrian-flag {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .flag-green {
+            height: 33.33%;
+            background-color: #137536;
+        }
+        
+        .flag-white {
+            height: 33.33%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flag-black {
+            height: 33.33%;
+            background-color: #000000;
+        }
+        
+        .flag-stars {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .flag-star {
+            color: #ce1126;
+            font-size: 8px;
         }
         
         .logo-text {
@@ -592,9 +622,18 @@
         <div class="container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTIwIj4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMTM3NTM2Ii8+CiAgPHJlY3QgeT0iNDAiIHdpZHRoPSIxODAiIGhlaWdodD0iNDAiIGZpbGw9IiNGRkZGRkYiLz4KICA8cmVjdCB5PSI4MCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzAwMDAwMCIvPgogIDxwYXRoIGQ9Ik04MCw2MCBDODQsNjAgODgsNTggOTIsNTYgQzk2LDU0IDEwMCw1MiAxMDQsNTAgQzEwOCw0OCAxMTIsNDYgMTE2LDQ0IEMxMjAsNDIgMTI0LDQwIDEyOCwzOCBDMTMyLDM2IDEzNiwzNCAxNDAsMzIgQzE0NCwzMCAxNDgsMjggMTUyLDI2IEMxNTYsMjQgMTYwLDIyIDE2NCwyMCBDMTY4LDE4IDE3MiwxNiAxNzYsMTQgQzE4MCwxMiAxODAsMTAgMTc4LDggQzE3Niw2IDE3NCw0IDE3MiwyIEMxNzAsMCAxNjgsLTIgMTY2LC00IEMxNjQsLTYgMTYyLC04IDE2MCwtMTAgQzE1OCwtMTIgMTU2LC0xNCAxNTQsLTE2IEMxNTIsLTE4IDE1MCwtMjAgMTQ4LC0yMiBDMTQ2LC0yNCAxNDQsLTI2IDE0MiwtMjggQzE0MCwtMzAgMTM4LC0zMiAxMzYsLTM0IEMxMzQsLTM2IDEzMiwtMzggMTMwLC00MCBDMTI4LC00MiAxMjYsLTQ0IDEyNCwtNDYgQzEyMiwtNDggMTIwLC01MCAxMTgsLTUyIEMxMTYsLTU0IDExNCwtNTYgMTEyLC01OCBDMTEwLC02MCAxMDgsLTYyIDEwNiwtNjQgQzEwNCwtNjYgMTAyLC02OCAxMDAsLTcwIEM5OCwtNzIgOTYsLTc0IDk0LC03NiBDOTIsLTc4IDkwLC04MCA4OCwtODIgQzg2LC04NCA4NCwtODYgODIsLTg4IEM4MCwtOTAgNzgsLTkyIDc2LC05NCBDNzQsLTk2IDcyLC05OCA3MCwtMTAwIEM2OCwtMTAyIDY2LC0xMDQgNjQsLTEwNiBDNjIsLTEwOCA2MCwtMTEwIDU4LC0xMTIgQzU2LC0xMTQgNTQsLTExNiA1MiwtMTE4IEM1MCwtMTIwIDQ4LC0xMjIgNDYsLTEyNCBDNDQsLTEyNiA0MiwtMTI4IDQwLC0xMzAgQzM4LC0xMzIgMzYsLTEzNCAzNCwtMTM2IEMzMiwtMTM4IDMwLC0xNDAgMjgsLTE0MiBDMjYsLTE0NCAyNCwtMTQ2IDIyLC0xNDggQzIwLC0xNTAgMTgsLTE1MiAxNiwtMTU0IEMxNCwtMTU2IDEyLC0xNTggMTAsLTE2MCBDOCwtMTYyIDYsLTE2NCA0LC0xNjYgQzIsLTE2OCAwLC0xNzAgLTIsLTE3MiBDLTQsLTE3NCAtNiwtMTc2IC04LC0xNzggQy0xMCwtMTgwIC0xMiwtMTgyIC0xNCwtMTg0IEMtMTYsLTE4NiAtMTgsLTE4OCAtMjAsLTE5MCBDLTIyLC0xOTIgLTI0LC0xOTQgLTI2LC0xOTYgQy0yOCwtMTk4IC0zMCwtMjAwIC0zMiwtMjAyIEMtMzQsLTIwNCAtMzYsLTIwNiAtMzgsLTIwOCBDLTQwLC0yMTAgLTQyLC0yMTIgLTQ0LC0yMTQgQy00NiwtMjE2IC00OCwtMjE4IC01MCwtMjIwIEMtNTIsLTIyMiAtNTQsLTIyNCAtNTYsLTIyNiBDLTU4LC0yMjggLTYwLC0yMzAgLTYyLC0yMzIgQy02NCwtMjM0IC02NiwtMjM2IC02OCwtMjM4IEMtNzAsLTI0MCAtNzIsLTI0MiAtNzQsLTI0NCBDLTc2LC0yNDYgLTc4LC0yNDggLTgwLC0yNTAgQy04MiwtMjUyIC04NCwtMjU0IC04NiwtMjU2IEMtODgsLTI1OCAtOTAsLTI2MCAtOTIsLTI2MiBDLTk0LC0yNjQgLTk2LC0yNjYgLTk4LC0yNjggQy0xMDAsLTI3MCAtMTAyLC0yNzIgLTEwNCwtMjc0IEMtMTA2LC0yNzYgLTEwOCwtMjc4IC0xMTAsLTI4MCBDLTExMiwtMjgyIC0xMTQsLTI4NCAtMTE2LC0yODYgQy0xMTgsLTI4OCAtMTIwLC0yOTAgLTEyMiwtMjkyIEMtMTI0LC0yOTQgLTEyNiwtMjk2IC0xMjgsLTI5OCBDLTEzMCwtMzAwIC0xMzIsLTMwMiAtMTM0LC0zMDQgQy0xMzYsLTMwNiAtMTM4LC0zMDggLTE0MCwtMzEwIEMtMTQyLC0zMTIgLTE0NCwtMzE0IC0xNDYsLTMxNiBDLTE0OCwtMzE4IC0xNTAsLTMyMCAtMTUyLC0zMjIgQy0xNTQsLTMyNCAtMTU2LC0zMjYgLTE1OCwtMzI4IEMtMTYwLC0zMzAgLTE2MiwtMzMyIC0xNjQsLTMzNCBDLTE2NiwtMzM2IC0xNjgsLTMzOCAtMTcwLC0zNDAgQy0xNzIsLTM0MiAtMTc0LC0zNDQgLTE3NiwtMzQ2IEMtMTc4LC0zNDggLTE4MCwtMzUwIC0xODIsLTM1MiBDLTE4NCwtMzU0IC0xODYsLTM1NiAtMTg4LC0zNTggQy0xOTAsLTM2MCAtMTkyLC0zNjIgLTE5NCwtMzY0IEMtMTk2LC0zNjYgLTE5OCwtMzY4IC0yMDAsLTM3MCBDLTIwMiwtMzcyIC0yMDQsLTM3NCAtMjA2LC0zNzYgQy0yMDgsLTM3OCAtMjEwLC0zODAgLTIxMiwtMzgyIEMtMjE0LC0zODQgLTIxNiwtMzg2IC0yMTgsLTM4OCBDLTIyMCwtMzkwIC0yMjIsLTM5MiAtMjI0LC0zOTQgQy0yMjYsLTM5NiAtMjI4LC0zOTggLTIzMCwtNDAwIEMtMjMyLC00MDIgLTIzNCwtNDA0IC0yMzYsLTQwNiBDLTIzOCwtNDA4IC0yNDAsLTQxMCAtMjQyLC00MTIgQy0yNDQsLTQxNCAtMjQ2LC00MTYgLTI0OCwtNDE4IEMtMjUwLC00MjAgLTI1MiwtNDIyIC0yNTQsLTQyNCBDLTI1NiwtNDI2IC0yNTgsLTQyOCAtMjYwLC00MzAgQy0yNjIsLTQzMiAtMjY0LC00MzQgLTI2NiwtNDM2IEMtMjY4LC00MzggLTI3MCwtNDQwIC0yNzIsLTQ0MiBDLTI3NCwtNDQ0IC0yNzYsLTQ0NiAtMjc4LC00NDggQy0yODAsLTQ1MCAtMjgyLC00NTIgLTI4NCwtNDU0IEMtMjg2LC00NTYgLTI4OCwtNDU4IC0yOTAsLTQ2MCBDLTI5MiwtNDYyIC0yOTQsLTQ2NCAtMjk2LC00NjYgQy0yOTgsLTQ2OCAtMzAwLC00NzAgLTMwMiwtNDcyIEMtMzA0LC00NzQgLTMwNiwtNDc2IC0zMDgsLTQ3OCBDLTMxMCwtNDgwIC0zMTIsLTQ4MiAtMzE0LC00ODQgQy0zMTYsLTQ4NiAtMzE4LC00ODggLTMyMCwtNDkwIEMtMzIyLC00OTIgLTMyNCwtNDk0IC0zMjYsLTQ5NiBDLTMyOCwtNDk4IC0zMzAsLTUwMCAtMzMyLC01MDIgQy0zMzQsLTUwNCAtMzM2LC01MDYgLTMzOCwtNTA4IEMtMzQwLC01MTAgLTM0MiwtNTEyIC0zNDQsLTUxNCBDLTM0NiwtNTE2IC0zNDgsLTUxOCAtMzUwLC01MjAgQy0zNTIsLTUyMiAtMzU0LC01MjQgLTM1NiwtNTI2IEMtMzU4LC01MjggLTM2MCwtNTMwIC0zNjIsLTUzMiBDLTM2NCwtNTM0IC0zNjYsLTUzNiAtMzY4LC01MzggQy0zNzAsLTU0MCAtMzcyLC01NDIgLTM3NCwtNTQ0IEMtMzc2LC01NDYgLTM3OCwtNTQ4IC0zODAsLTU1MCBDLTM4MiwtNTUyIC0zODQsLTU1NCAtMzg2LC01NTYgQy0zODgsLTU1OCAtMzkwLC01NjAgLTM5MiwtNTYyIEMtMzk0LC01NjQgLTM5NiwtNTY2IC0zOTgsLTU2OCBDLTQwMCwtNTcwIC00MDIsLTU3MiAtNDA0LC01NzQgQy00MDYsLTU3NiAtNDA4LC01NzggLTQxMCwtNTgwIEMtNDEyLC01ODIgLTQxNCwtNTg0IC00MTYsLTU4NiBDLTQxOCwtNTg4IC00MjAsLTU5MCAtNDIyLC01OTIgQy00MjQsLTU5NCAtNDI2LC01OTYgLTQyOCwtNTk4IEMtNDMwLC02MDAgLTQzMiwtNjAyIC00MzQsLTYwNCBDLTQzNiwtNjA2IC00MzgsLTYwOCAtNDQwLC02MTAgQy00NDIsLTYxMiAtNDQ0LC02MTQgLTQ0NiwtNjE2IEMtNDQ4LC02MTggLTQ1MCwtNjIwIC00NTIsLTYyMiBDLTQ1NCwtNjI0IC00NTYsLTYyNiAtNDU4LC02MjggQy00NjAsLTYzMCAtNDYyLC02MzIgLTQ2NCwtNjM0IEMtNDY2LC02MzYgLTQ2OCwtNjM4IC00NzAsLTY0MCBDLTQ3MiwtNjQyIC00NzQsLTY0NCA0NzYsNjQ2IiBmaWxsPSIjY2UxMTI2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MCA2MCkiLz4KPC9zdmc+" 
-                         alt="علم الثورة السورية" 
-                         title="علم الثورة السورية">
+                    <!-- العلم الجديد - علم الثورة السورية -->
+                    <div class="syrian-flag">
+                        <div class="flag-green"></div>
+                        <div class="flag-white">
+                            <div class="flag-stars">
+                                <div class="flag-star">★</div>
+                                <div class="flag-star">★</div>
+                                <div class="flag-star">★</div>
+                            </div>
+                        </div>
+                        <div class="flag-black"></div>
+                    </div>
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
             </div>
@@ -689,7 +728,7 @@
                 <div class="product-content">
                     <h3>فسيفساء حمص</h3>
                     <p>لوحات فنية من الفسيفساء بتقنيات صنع تقليدية</p>
-                    <div class="export-countries">
+                    <极简 class="export-countries">
                         <div class="country-tag">روسيا</div>
                         <div class="country-tag">الصين</div>
                         <div class="country-tag">الولايات المتحدة</div>
@@ -721,7 +760,7 @@
                 <h3>ورشة الفسيفساء الحمصية</h3>
                 <p>"حافظنا على التراث السوري ونقله إلى العالم"</p>
                 <p><i class="fas fa-palette"></i> تصدير أعمالنا إلى متاحف عالمية</p>
-            </div>
+            </极简>
         </div>
     </div>
     
