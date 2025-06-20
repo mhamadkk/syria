@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سوريا تبتيك - بوابة التصدير السوري</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -16,25 +17,84 @@
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
         /* التصميم المتجاوب */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+        @media (max-width: 992px) {
+            .products, .exporters, .stats, .footer-content {
+                flex-wrap: wrap;
             }
             
-            .product-card {
-                width: 100%;
+            .product-card, .exporter-card {
+                flex: 0 0 calc(50% - 20px);
+            }
+            
+            .stat-item {
+                flex: 0 0 50%;
+                margin-bottom: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .product-card, .exporter-card, .stat-item {
+                flex: 0 0 100%;
             }
             
             .logo {
                 flex-direction: column;
+                text-align: center;
             }
             
             .logo-icon {
-                margin-left: 0;
-                margin-bottom: 10px;
+                margin: 0 auto 10px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 300px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 0;
+            }
+            
+            .footer-section {
+                flex: 0 0 100%;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+            
+            .section-title::after {
+                width: 70px;
             }
         }
         
@@ -42,12 +102,13 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
         }
         
         /* الهيدر والشعار */
         header {
             background: linear-gradient(to right, #ce1126, #000000, #ffffff, #007a3d);
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
             border-bottom: 3px solid #007a3d;
         }
@@ -71,46 +132,13 @@
             border: 2px solid rgba(0,0,0,0.5);
             overflow: hidden;
             position: relative;
+            flex-shrink: 0;
         }
         
-        /* تصميم العلم الجديد */
-        .syrian-flag {
+        .logo-icon img {
             width: 100%;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .flag-green {
-            height: 33.33%;
-            background-color: #137536;
-        }
-        
-        .flag-white {
-            height: 33.33%;
-            background-color: white;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .flag-black {
-            height: 33.33%;
-            background-color: #000000;
-        }
-        
-        .stars {
-            position: absolute;
-            display: flex;
-            gap: 4px; /* تباعد صغير بين النجوم */
-        }
-        
-        .star {
-            color: #ce1126;
-            font-size: 10px; /* حجم النجوم الصغير */
-            font-weight: bold;
-            line-height: 1;
+            object-fit: cover;
         }
         
         .logo-text {
@@ -129,7 +157,7 @@
         /* القائمة */
         nav {
             background-color: #000;
-            padding: 15px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -149,9 +177,11 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 4px;
             transition: all 0.3s;
+            display: block;
+            text-align: center;
         }
         
         .nav-links a:hover {
@@ -161,7 +191,7 @@
         /* القسم الرئيسي */
         .hero {
             background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070') no-repeat center center/cover;
-            height: 400px;
+            height: 450px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -188,14 +218,14 @@
         }
         
         .hero h1 {
-            font-size: 36px;
+            font-size: 42px;
             margin-bottom: 20px;
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
         
         .hero p {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 20px;
         }
         
@@ -205,7 +235,7 @@
             justify-content: space-around;
             background-color: #007a3d;
             color: white;
-            padding: 30px 20px;
+            padding: 25px 15px;
             text-align: center;
             margin: 30px 0;
             border-radius: 10px;
@@ -213,16 +243,17 @@
         }
         
         .stat-item {
-            padding: 0 20px;
+            padding: 0 15px;
+            flex: 1;
         }
         
         .stat-item h3 {
-            font-size: 40px;
+            font-size: 36px;
             margin-bottom: 10px;
         }
         
         .stat-item p {
-            font-size: 18px;
+            font-size: 16px;
         }
         
         /* المنتجات */
@@ -250,7 +281,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             margin-bottom: 40px;
         }
         
@@ -259,8 +290,11 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 300px;
+            width: 100%;
+            max-width: 350px;
             transition: transform 0.3s;
+            flex: 1;
+            min-width: 280px;
         }
         
         .product-card:hover {
@@ -290,6 +324,7 @@
         .product-content h3 {
             color: #ce1126;
             margin-bottom: 10px;
+            font-size: 22px;
         }
         
         .export-countries {
@@ -317,7 +352,7 @@
         .quality-badge {
             background-color: #007a3d;
             color: white;
-            padding: 5px 10px;
+            padding: 6px 12px;
             border-radius: 4px;
             display: inline-block;
             margin-top: 10px;
@@ -327,7 +362,7 @@
         /* قصص النجاح */
         .success-stories {
             background-color: #fff;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 40px;
@@ -345,10 +380,12 @@
         .story h3 {
             color: #ce1126;
             margin-bottom: 10px;
+            font-size: 22px;
         }
         
         .story p {
             margin-bottom: 10px;
+            font-size: 16px;
         }
         
         /* دليل المصدرين */
@@ -373,24 +410,27 @@
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 2px solid #eee;
+            font-size: 20px;
         }
         
         .exporter-info {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
+            font-size: 15px;
         }
         
         .exporter-info i {
             color: #ce1126;
-            width: 30px;
+            width: 25px;
             text-align: center;
+            margin-left: 5px;
         }
         
         /* التواصل */
         .contact-section {
             background-color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 40px;
@@ -409,6 +449,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
+            font-size: 16px;
         }
         
         .form-group input,
@@ -434,6 +475,8 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
         }
         
         .submit-btn:hover {
@@ -444,8 +487,9 @@
         footer {
             background-color: #000;
             color: white;
-            padding: 30px 0;
+            padding: 30px 0 0;
             text-align: center;
+            margin-top: auto;
         }
         
         .footer-content {
@@ -461,6 +505,7 @@
             flex: 1;
             min-width: 250px;
             margin-bottom: 20px;
+            padding: 0 15px;
         }
         
         .footer-section h3 {
@@ -469,11 +514,72 @@
             font-size: 20px;
         }
         
+        .footer-section p {
+            margin-bottom: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #007a3d;
+        }
+        
         .copyright {
             background-color: #111;
             padding: 15px 0;
             text-align: center;
             margin-top: 20px;
+        }
+        
+        /* قائمة الهاتف المحمول */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #000;
+                padding: 15px 0;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
@@ -483,18 +589,9 @@
         <div class="container">
             <div class="logo">
                 <div class="logo-icon">
-                  <!-- علم سوريا الجديد مع النجوم الصغيرة -->
-                  <div class="syrian-flag">
-                    <div class="flag-green"></div>
-                    <div class="flag-white">
-                      <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                      </div>
-                    </div>
-                    <div class="flag-black"></div>
-                  </div>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDAgMzYwIj48cmVjdCB3aWR0aD0iNTQwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iIzEzNzUzNiIvPjxyZWN0IHk9IjEyMCIgd2lkdGg9IjU0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmZmZmZmYiLz48cmVjdCB5PSIyNDAiIHdpZHRoPSI1NDAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0iTTI3MCwxODAgQTIwLDIwIDAgMSwxIDIzMCwxODAgQTIwLDIwIDAgMSAxIDI3MCwxODAgWiIgZmlsbD0iI2NlMTEyNiIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjE4MCIgcj0iMTUiIGZpbGw9IiNjZTExMjYiLz48Y2lyY2xlIGN4PSIyNjAiIGN5PSIxODAiIHI9IjE1IiBmaWxsPSIjY2UxMTI2Ii8+PC9zdmc+" 
+                         alt="علم سوريا" 
+                         title="العلم السوري">
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
             </div>
@@ -504,13 +601,16 @@
     
     <!-- القائمة -->
     <nav>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="container">
             <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#products">المنتجات</a></li>
-                <li><a href="#success">قصص النجاح</a></li>
-                <li><a href="#exporters">دليل المصدرين</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#products"><i class="fas fa-box-open"></i> المنتجات</a></li>
+                <li><a href="#success"><i class="fas fa-trophy"></i> قصص النجاح</a></li>
+                <li><a href="#exporters"><i class="fas fa-book"></i> دليل المصدرين</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> تواصل معنا</a></li>
             </ul>
         </div>
     </nav>
@@ -554,7 +654,7 @@
                     <p>زيت زيتون عالي الجودة من أشجار عمرها مئات السنين</p>
                     <div class="export-countries">
                         <div class="country-tag">الإمارات</div>
-                        <极简>السعودية</div>
+                        <div class="country-tag">السعودية</div>
                         <div class="country-tag">ألمانيا</div>
                         <div class="country-tag">فرنسا</div>
                     </div>
@@ -564,7 +664,7 @@
             
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/极简-1509695507497-903c140c43b0?q=80&w=2073" alt="نسيج">
+                    <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?q=80&w=2073" alt="نسيج">
                 </div>
                 <div class="product-content">
                     <h3>النسيج الدمشقي</h3>
@@ -572,7 +672,7 @@
                     <div class="export-countries">
                         <div class="country-tag">فرنسا</div>
                         <div class="country-tag">إيطاليا</div>
-                        <div class="country-tag">اليابان</div>
+                        <极简 class="country-tag">اليابان</div>
                         <div class="country-tag">الولايات المتحدة</div>
                     </div>
                     <div class="quality-badge">✅ شهادة جودة: التراث العالمي لليونسكو</div>
@@ -590,7 +690,7 @@
                         <div class="country-tag">روسيا</div>
                         <div class="country-tag">الصين</div>
                         <div class="country-tag">الولايات المتحدة</div>
-                        <div class="country-tag">كندا</极简>
+                        <div class="country-tag">كندا</div>
                     </div>
                     <div class="quality-badge">✅ شهادة جودة: الحرف اليدوية السورية</div>
                 </div>
@@ -605,19 +705,19 @@
             <div class="story">
                 <h3>مصنع نور للنسيج - حلب</h3>
                 <p>"رغم الدمار.. استعدنا إنتاجنا وزدنا صادراتنا 300%"</p>
-                <p>📈 تصدر الآن إلى 15 دولة حول العالم</p>
+                <p><i class="fas fa-chart-line"></i> تصدر الآن إلى 15 دولة حول العالم</p>
             </div>
             
             <div class="story">
                 <h3>شركة إدلب للزيتون</h3>
                 <p>"الجودة هي سر نجاحنا.. حصلنا على شهادة ISO العالمية"</p>
-                <p>🌍 تصدير منتجاتنا إلى 22 دولة</p>
+                <p><i class="fas fa-globe"></i> تصدير منتجاتنا إلى 22 دولة</p>
             </div>
             
             <div class="story">
                 <h3>ورشة الفسيفساء الحمصية</h3>
                 <p>"حافظنا على التراث السوري ونقله إلى العالم"</p>
-                <p>🎨 تصدير أعمالنا إلى متاحف عالمية</p>
+                <p><i class="fas fa-palette"></i> تصدير أعمالنا إلى متاحف عالمية</p>
             </div>
         </div>
     </div>
@@ -629,48 +729,48 @@
             <div class="exporter-card">
                 <h3>شركة إدلب للزيتون</h3>
                 <div class="exporter-info">
-                    <span>📍</span> إدلب، سوريا
+                    <i class="fas fa-map-marker-alt"></i> إدلب، سوريا
                 </div>
                 <div class="exporter-info">
-                    <span>📧</span> contact@idlibolives.sy
+                    <i class="fas fa-envelope"></i> contact@idlibolives.sy
                 </div>
                 <div class="exporter-info">
-                    <span>📱</span> +963 11 222 3333
+                    <i class="fas fa-phone"></i> +963 11 222 3333
                 </div>
                 <div class="exporter-info">
-                    <span>🌐</span> www.idlibolives.sy
+                    <i class="fas fa-globe"></i> www.idlibolives.sy
                 </div>
             </div>
             
             <div class="exporter-card">
                 <h3>مصنع نور للنسيج</h3>
                 <div class="exporter-info">
-                    <span>📍</span> حلب، سوريا
+                    <i class="fas fa-map-marker-alt"></i> حلب، سوريا
                 </div>
                 <div class="exporter-info">
-                    <span>📧</span> info@nourtextile.com
+                    <i class="fas fa-envelope"></i> info@nourtextile.com
                 </div>
                 <div class="exporter-info">
-                    <span>📱</span> +963 22 444 5555
+                    <i class="fas fa-phone"></i> +963 22 444 5555
                 </div>
                 <div class="exporter-info">
-                    <span>🌐</span> www.nourtextile.com
+                    <i class="fas fa-globe"></i> www.nourtextile.com
                 </div>
             </div>
             
             <div class="exporter-card">
                 <h3>ورشة الفسيفساء الحمصية</h3>
-                <div class="极简-info">
-                    <span>📍</span> حمص، سوريا
+                <div class="exporter-info">
+                    <i class="fas fa-map-marker-alt"></i> حمص، سوريا
                 </div>
                 <div class="exporter-info">
-                    <span>📧</span> mosaics@homsart.sy
+                    <i class="fas fa-envelope"></i> mosaics@homsart.sy
                 </div>
                 <div class="exporter-info">
-                    <span>📱</span> +963 33 777 8888
+                    <i class="fas fa-phone"></i> +963 33 777 8888
                 </div>
                 <div class="exporter-info">
-                    <span>🌐</span> www.homsmosaics.sy
+                    <i class="fas fa-globe"></i> www.homsmosaics.sy
                 </div>
             </div>
         </div>
@@ -722,16 +822,24 @@
             
             <div class="footer-section">
                 <h3>اتصل بنا</h3>
-                <p>دمشق، سوريا</p>
-                <p>هاتف: +963 11 123 4567</p>
-                <p>بريد: info@syriatebtik.sy</p>
+                <p><i class="fas fa-map-marker-alt"></i> دمشق، سوريا</p>
+                <p><i class="fas fa-phone"></i> هاتف: +963 11 123 4567</p>
+                <p><i class="fas fa-envelope"></i> بريد: info@syriatebtik.sy</p>
             </div>
             
             <div class="footer-section">
                 <h3>تابعنا</h3>
-                <p>فيسبوك</p>
-                <p>تويتر</p>
-                <p>إنستغرام</p>
+                <div class="social-links">
+                    <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p>اشترك في نشرتنا البريدية</p>
+                <div class="form-group">
+                    <input type="email" placeholder="بريدك الإلكتروني" style="padding: 8px; width: 100%; max-width: 250px; margin: 10px auto;">
+                </div>
+                <button class="submit-btn" style="padding: 8px 20px; font-size: 16px;">اشتراك</button>
             </div>
         </div>
         
@@ -756,6 +864,28 @@
             e.preventDefault();
             alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
             document.querySelector('.contact-form').reset();
+        });
+        
+        // قائمة الجوال
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+        
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // إخفاء القائمة عند التمرير
+        window.addEventListener('scroll', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         });
     </script>
 </body>
