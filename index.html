@@ -70,12 +70,28 @@
             margin-left: 15px;
             border: 2px solid rgba(0,0,0,0.5);
             overflow: hidden;
+            position: relative; /* لإضافة النجوم */
         }
         
         .logo-icon img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        
+        /* النجوم الحمراء في وسط العلم */
+        .stars {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 4px;
+        }
+        
+        .star {
+            color: #ce1126;
+            font-size: 14px;
         }
         
         .logo-text {
@@ -448,10 +464,16 @@
         <div class="container">
             <div class="logo">
                 <div class="logo-icon">
-                  <!-- علم سوريا الجديد - مخزن محليًا -->
+                  <!-- علم سوريا الجديد مع النجوم الحمراء -->
                   <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDAgMzYwIj48cmVjdCB3aWR0aD0iNTQwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iIzEzNzUzNiIvPjxyZWN0IHk9IjEyMCIgd2lkdGg9IjU0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmZmZmZmYiLz48cmVjdCB5PSIyNDAiIHdpZHRoPSI1NDAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0iTTI3MCwxODAgQTIwLDIwIDAgMSwxIDIzMCwxODAgQTIwLDIwIDAgMSwxIDI3MCwxODAgWiIgZmlsbD0iI2NlMTEyNiIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjE4MCIgcj0iMTUiIGZpbGw9IiNjZTExMjYiLz48Y2lyY2xlIGN4PSIyNjAiIGN5PSIxODAiIHI9IjE1IiBmaWxsPSIjY2UxMTI2Ii8+PC9zdmc+" 
                        alt="علم سوريا الجديد" 
                        title="العلم السوري - رمز السيادة والوحدة الوطنية">
+                  <!-- النجوم الحمراء في وسط العلم -->
+                  <div class="stars">
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                  </div>
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
             </div>
