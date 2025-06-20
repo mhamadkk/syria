@@ -46,10 +46,10 @@
         
         /* الهيدر والشعار */
         header {
-            background: linear-gradient(to right, #137536, #000000, #ffffff, #000000);
+            background: linear-gradient(to right, #ce1126, #000000, #ffffff, #007a3d);
             padding: 20px 0;
             text-align: center;
-            border-bottom: 3px solid #137536;
+            border-bottom: 3px solid #007a3d;
         }
         
         .logo {
@@ -60,30 +60,22 @@
         }
         
         .logo-icon {
-            width: 80px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: 15px;
-            border: 1px solid rgba(0,0,0,0.3);
-            border-radius: 4px;
+            border: 2px solid rgba(0,0,0,0.5);
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            background: linear-gradient(to right, #137536 33.3%, #ffffff 33.3%, #ffffff 66.6%, #000000 66.6%);
-            position: relative;
         }
         
-        /* النجوم الحمراء في وسط العلم */
-        .logo-icon::before {
-            content: "★ ★ ★";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ce1126;
-            font-size: 14px;
-            letter-spacing: 4px;
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .logo-text {
@@ -128,7 +120,7 @@
         }
         
         .nav-links a:hover {
-            background-color: #137536;
+            background-color: #007a3d;
         }
         
         /* القسم الرئيسي */
@@ -176,7 +168,7 @@
         .stats {
             display: flex;
             justify-content: space-around;
-            background-color: #137536;
+            background-color: #007a3d;
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -202,7 +194,7 @@
         .section-title {
             text-align: center;
             margin: 40px 0 30px;
-            color: #137536;
+            color: #ce1126;
             font-size: 32px;
             position: relative;
             padding-bottom: 15px;
@@ -216,7 +208,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background-color: #137536;
+            background-color: #007a3d;
         }
         
         .products {
@@ -261,7 +253,7 @@
         }
         
         .product-content h3 {
-            color: #137536;
+            color: #ce1126;
             margin-bottom: 10px;
         }
         
@@ -273,7 +265,7 @@
         
         .country-tag {
             background-color: #f0f7ff;
-            color: #137536;
+            color: #007a3d;
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -288,7 +280,7 @@
         }
         
         .quality-badge {
-            background-color: #137536;
+            background-color: #007a3d;
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -316,7 +308,7 @@
         }
         
         .story h3 {
-            color: #137536;
+            color: #ce1126;
             margin-bottom: 10px;
         }
         
@@ -342,7 +334,7 @@
         }
         
         .exporter-card h3 {
-            color: #137536;
+            color: #007a3d;
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 2px solid #eee;
@@ -437,7 +429,7 @@
         }
         
         .footer-section h3 {
-            color: #137536;
+            color: #007a3d;
             margin-bottom: 15px;
             font-size: 20px;
         }
@@ -448,19 +440,6 @@
             text-align: center;
             margin-top: 20px;
         }
-        
-        /* رسالة تحذير */
-        .flag-warning {
-            background-color: #e8f5e9;
-            border: 1px solid #137536;
-            border-radius: 4px;
-            padding: 10px;
-            margin: 20px auto;
-            max-width: 600px;
-            text-align: center;
-            color: #137536;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -468,8 +447,11 @@
     <header>
         <div class="container">
             <div class="logo">
-                <div class="logo-icon" title="علم سوريا الجديد - أخضر، أبيض، أسود مع نجوم حمراء">
-                  <!-- العلم تم إنشاؤه باستخدام CSS -->
+                <div class="logo-icon">
+                  <!-- علم سوريا الجديد - مخزن محليًا -->
+                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDAgMzYwIj48cmVjdCB3aWR0aD0iNTQwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iIzEzNzUzNiIvPjxyZWN0IHk9IjEyMCIgd2lkdGg9IjU0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmZmZmZmYiLz48cmVjdCB5PSIyNDAiIHdpZHRoPSI1NDAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0iTTI3MCwxODAgQTIwLDIwIDAgMSwxIDIzMCwxODAgQTIwLDIwIDAgMSwxIDI3MCwxODAgWiIgZmlsbD0iI2NlMTEyNiIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjE4MCIgcj0iMTUiIGZpbGw9IiNjZTExMjYiLz48Y2lyY2xlIGN4PSIyNjAiIGN5PSIxODAiIHI9IjE1IiBmaWxsPSIjY2UxMTI2Ii8+PC9zdmc+" 
+                       alt="علم سوريا الجديد" 
+                       title="العلم السوري - رمز السيادة والوحدة الوطنية">
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
             </div>
@@ -489,13 +471,6 @@
             </ul>
         </div>
     </nav>
-    
-    <!-- رسالة توضيحية -->
-    <div class="container">
-        <div class="flag-warning">
-            تم تحديث علم سوريا بنجاح إلى النسخة الجديدة
-        </div>
-    </div>
     
     <!-- القسم الرئيسي -->
     <section id="home" class="hero">
