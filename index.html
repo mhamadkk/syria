@@ -70,7 +70,7 @@
             margin-left: 15px;
             border: 2px solid rgba(0,0,0,0.5);
             overflow: hidden;
-            position: relative; /* لإضافة النجوم */
+            position: relative;
         }
         
         .logo-icon img {
@@ -465,14 +465,16 @@
             <div class="logo">
                 <div class="logo-icon">
                   <!-- علم سوريا الجديد مع النجوم الحمراء -->
-                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDAgMzYwIj48cmVjdCB3aWR0aD0iNTQwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iIzEzNzUzNiIvPjxyZWN0IHk9IjEyMCIgd2lkdGg9IjU0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmZmZmZmYiLz48cmVjdCB5PSIyNDAiIHdpZHRoPSI1NDAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0iTTI3MCwxODAgQTIwLDIwIDAgMSwxIDIzMCwxODAgQTIwLDIwIDAgMSwxIDI3MCwxODAgWiIgZmlsbD0iI2NlMTEyNiIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjE4MCIgcj0iMTUiIGZpbGw9IiNjZTExMjYiLz48Y2lyY2xlIGN4PSIyNjAiIGN5PSIxODAiIHI9IjE1IiBmaWxsPSIjY2UxMTI2Ii8+PC9zdmc+" 
-                       alt="علم سوريا الجديد" 
-                       title="العلم السوري - رمز السيادة والوحدة الوطنية">
-                  <!-- النجوم الحمراء في وسط العلم -->
-                  <div class="stars">
-                    <div class="star">★</div>
-                    <div class="star">★</div>
-                    <div class="star">★</div>
+                  <div class="syrian-flag">
+                    <div class="flag-green"></div>
+                    <div class="flag-white">
+                      <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                      </div>
+                    </div>
+                    <div class="flag-black"></div>
                   </div>
                 </div>
                 <div class="logo-text">سوريا تبتيك | SyriaTebtik</div>
@@ -737,5 +739,46 @@
             document.querySelector('.contact-form').reset();
         });
     </script>
+    
+    <style>
+        /* تصميم العلم الجديد باستخدام CSS فقط */
+        .syrian-flag {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .flag-green {
+            height: 33.33%;
+            background-color: #137536;
+        }
+        
+        .flag-white {
+            height: 33.33%;
+            background-color: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flag-black {
+            height: 33.33%;
+            background-color: #000000;
+        }
+        
+        .stars {
+            position: absolute;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .star {
+            color: #ce1126;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
 </body>
 </html>
